@@ -8,7 +8,9 @@ import logging
 import jcamp
 import numpy as np
 import matplotlib.pyplot as plt
+
 from matplotlib.pylab import *
+from pathlib import Path
 
 # interactive off
 # ---------------
@@ -104,7 +106,7 @@ class jdx_file(object):
     # make sure we have string for the header
     # ---------------------------------------
     header_str = '\n'.join(header)
-
+    
     x = spectrum_data_hash['x']
     y = spectrum_data_hash['y']
     ylabel = header_params['ylabel']
@@ -145,8 +147,7 @@ class jdx_file(object):
       os.remove(header_txt_filename)
 
     with open(header_txt_filename, 'w') as f:
-      for line in header:
-        f.write('%s\n' % line.strip())
+      for line in header: f.write('%s\n' % line.strip())
 
     # write the spectral data to text-file
     # ------------------------------------
@@ -156,6 +157,32 @@ class jdx_file(object):
 
     xy = np.column_stack((x, y))
     np.savetxt(spectral_data_filename, xy, delimiter = ',')
+ 
+    if not self.spectra_contains_range_756_1400(x):
+      
+      logger.warn(f'WARNING: {self.filename} may have 1 or more blocks with \
+              insufficient wavenumer range (IWR). Removing PNG and related text files ...')
+      logger.warn(f'  removing following file: {outname_png}')
+      logger.warn(f'  removing following file: {spectral_data_filename}')
+      logger.warn(f'  removing following file: {header_txt_filename}')
+
+      # now if we have insufficient wave-number range, remove files
+      # and write names to error file
+      # -----------------------------------------------------------
+      outname_errors_txt = os.path.join(self.outdir, 'insufficient_wavenumber_range.txt')
+      if not os.path.isfile(outname_errors_txt):
+        Path(outname_errors_txt).touch()
+  
+      with open(outname_errors_txt, 'a') as f:
+        f.write('%s\n' % outname_png)
+        f.write('%s\n' % spectral_data_filename)
+        f.write('%s\n' % header_txt_filename)
+ 
+      # clean up file(s)
+      # ----------------
+      os.remove(outname_png)
+      os.remove(spectral_data_filename)
+      os.remove(header_txt_filename)
 
   def get_jdx_headers_and_datalines(self) -> dict:
     '''
