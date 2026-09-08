@@ -1,0 +1,3 @@
+/home/gerasimos/Desktop/work/kalman_and_ssi/jcamp/github/jdx_dumper/outputs/19287-45-7-IR_DIBORANE.png
+/home/gerasimos/Desktop/work/kalman_and_ssi/jcamp/github/jdx_dumper/outputs/19287-45-7-IR_DIBORANE-ir_spectra.txt
+/home/gerasimos/Desktop/work/kalman_and_ssi/jcamp/github/jdx_dumper/outputs/19287-45-7-IR_DIBORANE-metadata.txt

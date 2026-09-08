@@ -1,0 +1,26 @@
+##TITLE=2-Butene
+##JCAMP-DX=4.24
+##DATA TYPE=INFRARED SPECTRUM
+##ORIGIN=NIST Mass Spectrometry Data Center
+##OWNER=NIST Standard Reference Data Program
+Collection (C) 2018 copyright by the U.S. Secretary of Commerce
+on behalf of the United States of America. All rights reserved.
+##CAS REGISTRY NO=107-01-7
+##MOLFORM=C 4 H 8
+##$NIST SOURCE=MSDC-IR
+##SPECTROMETER/DATA SYSTEM=HP-GC/MS/IRD
+##STATE=gas
+##XUNITS=1/CM
+##YUNITS=ABSORBANCE
+##XFACTOR=1.0
+##YFACTOR=0.000001100
+##DELTAX=4.0
+##FIRSTX=550.0
+##LASTX=3846.0
+##FIRSTY=0.000205
+##MAXX=3846
+##MINX=550
+##MAXY=0.011
+##MINY=0
+##NPOINTS=825
+##XYDATA=(X++(Y..Y))

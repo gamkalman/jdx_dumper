@@ -1,0 +1,66 @@
+###########################################################################
+# NAME:
+#   Dockerfile.jdx_dumper
+# DESCRIPTION
+#   Dockerfile to containerize the jdx dumper python script.
+# USAGE:
+#     $ /usr/bin/docker build -f Dockerfile.jdx_dumper --no-cache --progress=plain -t jdx_dumper .
+#     $ /usr/bin/docker build -f Dockerfile.jdx_dumper --no-cache --progress=plain -t jdx_dumper .
+#     $ DIR=$(pwd)
+#     $ mkdir outputs
+#     $ docker run -v $DIR:$DIR jdx_dumper:latest -d $DIR/inputs -o $DIR/outputs
+# AUTHOR:
+#     GAM. 10 September 2026
+###########################################################################
+
+# use fairly recent version of amazon linux
+# # ---------------------------------------
+FROM public.ecr.aws/amazonlinux/amazonlinux:2023
+
+# install OS system-level dependencies
+# ------------------------------------
+RUN dnf update -y
+RUN dnf group install -y "Development Tools"
+RUN dnf install -y \
+  python3.14 \
+  python3.14-pip \
+  git \
+  wget \
+  vim-enhanced \
+  which \
+  tar \
+  xz-devel \
+  findutils \
+  zip \
+  && dnf clean all
+
+# set up python3.14
+# -----------------
+RUN alternatives --install /usr/bin/python3 python3 /usr/bin/python3.14 1 && \
+    alternatives --install /usr/bin/pip3 pip3 /usr/bin/pip3.14 1
+
+# set up some non-root sub-user
+# -----------------------------
+# set up sub-user for purpose of running cronjob
+#  (non-root) supercronic tool
+# ----------------------------------------------
+ARG USERNAME=aspect_user
+ARG USER_UID=1001
+ARG USER_GID=1001
+    
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+ENV ASPECT_USER=$USERNAME
+WORKDIR /home/$ASPECT_USER
+
+# add external files into running container
+# -----------------------------------------
+ADD requirements.txt /home/$ASPECT_USER
+ADD jdx_dump.py /home/$ASPECT_USER
+
+# update permissions
+# ------------------ 
+RUN pip3 install --no-cache-dir -r requirements.txt
+RUN chown -R 1001:1001 /home/$ASPECT_USER
+RUN ls -la /home/$ASPECT_USER
+ENTRYPOINT [ "/usr/bin/python3", "/home/aspect_user/jdx_dump.py" ]

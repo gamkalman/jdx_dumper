@@ -1,0 +1,25 @@
+##TITLE=Triethyl phosphate
+##JCAMP-DX=4.24
+##DATA TYPE=INFRARED SPECTRUM
+##ORIGIN=Sadtler Research Labs Under US-EPA Contract
+##OWNER=NIST Standard Reference Data Program
+Collection (C) 2018 copyright by the U.S. Secretary of Commerce
+on behalf of the United States of America. All rights reserved.
+##CAS REGISTRY NO=78-40-0
+##MOLFORM=C 6 H 15 O 4 P
+##$NIST SOURCE=MSDC-IR
+##STATE=gas
+##XUNITS=1/CM
+##YUNITS=ABSORBANCE
+##XFACTOR=1.0
+##YFACTOR=0.000056430
+##DELTAX=4.0
+##FIRSTX=450.0
+##LASTX=3966.0
+##FIRSTY=0.000000
+##MAXX=3966
+##MINX=450
+##MAXY=0.5643
+##MINY=0
+##NPOINTS=880
+##XYDATA=(X++(Y..Y))

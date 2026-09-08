@@ -1,0 +1,25 @@
+##TITLE=1-Butanol
+##JCAMP-DX=4.24
+##DATA TYPE=INFRARED SPECTRUM
+##ORIGIN=Sadtler Research Labs Under US-EPA Contract
+##OWNER=NIST Standard Reference Data Program
+Collection (C) 2018 copyright by the U.S. Secretary of Commerce
+on behalf of the United States of America. All rights reserved.
+##CAS REGISTRY NO=71-36-3
+##MOLFORM=C 4 H 10 O
+##$NIST SOURCE=MSDC-IR
+##STATE=gas
+##XUNITS=1/CM
+##YUNITS=ABSORBANCE
+##XFACTOR=1.0
+##YFACTOR=0.000126709
+##DELTAX=4.0
+##FIRSTX=450.0
+##LASTX=3966.0
+##FIRSTY=0.038646
+##MAXX=3966
+##MINX=450
+##MAXY=1.26709
+##MINY=0
+##NPOINTS=880
+##XYDATA=(X++(Y..Y))

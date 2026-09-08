@@ -1,0 +1,25 @@
+##TITLE=n-Propyl acetate
+##JCAMP-DX=4.24
+##DATA TYPE=INFRARED SPECTRUM
+##ORIGIN=Sadtler Research Labs Under US-EPA Contract
+##OWNER=NIST Standard Reference Data Program
+Collection (C) 2018 copyright by the U.S. Secretary of Commerce
+on behalf of the United States of America. All rights reserved.
+##CAS REGISTRY NO=109-60-4
+##MOLFORM=C 5 H 10 O 2
+##$NIST SOURCE=MSDC-IR
+##STATE=gas
+##XUNITS=1/CM
+##YUNITS=ABSORBANCE
+##XFACTOR=1.0
+##YFACTOR=0.000198291
+##DELTAX=4.0
+##FIRSTX=450.0
+##LASTX=3966.0
+##FIRSTY=0.059091
+##MAXX=3966
+##MINX=450
+##MAXY=1.98291
+##MINY=0
+##NPOINTS=880
+##XYDATA=(X++(Y..Y))
