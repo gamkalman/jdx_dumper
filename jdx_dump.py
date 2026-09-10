@@ -417,7 +417,7 @@ def main():
     # make sure directory had at least one .jdx/.JDX file
     # ---------------------------------------------------
     if len(jdx_filenames) < 1:
-      show_usage('ERROR: no .jdx/.JDX files found in: {input_directory}')
+      show_usage(f'ERROR: no .jdx/.JDX files found in: {input_directory}')
 
   # now that we havef list filenames, we can begin
   # to parse the files

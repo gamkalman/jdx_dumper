@@ -1,17 +1,34 @@
-###########################################################################
+####################################################################################################
 # NAME:
 #   Dockerfile.jdx_dumper
 # DESCRIPTION
 #   Dockerfile to containerize the jdx dumper python script.
-# USAGE:
-#     $ /usr/bin/docker build -f Dockerfile.jdx_dumper --no-cache --progress=plain -t jdx_dumper .
+# EXAMPLE USAGE:
+#
+#   Linux
+#   -----
+#
+#     Install Docker command-line on your Linux box. Then:
+#
 #     $ /usr/bin/docker build -f Dockerfile.jdx_dumper --no-cache --progress=plain -t jdx_dumper .
 #     $ DIR=$(pwd)
 #     $ mkdir outputs
+#     $ ls -l inputs/ | head
+#     total 732
+#     -rw-rw-r-- 1 gerasimos gerasimos   4415 Sep  1 14:30 107-01-7-IR.jdx
+#     -rw-rw-r-- 1 gerasimos gerasimos  25844 Sep  1 14:30 107-18-6-IR.jdx
+#     -rw-rw-r-- 1 gerasimos gerasimos  35079 Sep  1 14:30 108-05-4-IR.jdx
+#     ...
 #     $ docker run -v $DIR:$DIR jdx_dumper:latest -d $DIR/inputs -o $DIR/outputs
+#
+#   Windows (CMD prompt)
+#   -------
+#
+#   ... (to be updated soon)
+#
 # AUTHOR:
-#     GAM. 10 September 2026
-###########################################################################
+#   GAM. 8 September 2026
+###################################################################################################
 
 # use fairly recent version of amazon linux
 # # ---------------------------------------
@@ -62,5 +79,4 @@ ADD jdx_dump.py /home/$ASPECT_USER
 # ------------------ 
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN chown -R 1001:1001 /home/$ASPECT_USER
-RUN ls -la /home/$ASPECT_USER
 ENTRYPOINT [ "/usr/bin/python3", "/home/aspect_user/jdx_dump.py" ]
