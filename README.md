@@ -67,7 +67,7 @@
     Set the output directory to the current working directory, under a sub-folder 'outputs':
     > set "DIR=%CD%"\outputs
     > mkdir outputs
-    > python3 jdx_dump.py -f inputs/693-07-2-IR.jdx -o %DIR%\outputs
+    > python3 jdx_dump.py -f inputs/693-07-2-IR.jdx -o %DIR%
 
 ###### Sample Images
  
