@@ -48,26 +48,26 @@
     > pip3 install pathlib
     > pip3 install jcamp
     
-    Next, download this code from GitHub as a zip-file. Upzip, and navigate to your unzipped folder e.g.
+    Next, download this code from GitHub as a zip-file. Unzip, and navigate to your unzipped folder e.g.
 
     > cd C:\Users\dessb\Desktop\jdx_dumper
     C:\Users\dessb\Desktop\jdx_dumper> 
 
     Now you can run the code e.g.
-    C:\Users\dessb\Desktop\jdx_dumper> python3 jdx_dump.py --version
+    > python3 jdx_dump.py --version
     Version: 1.0.0    
  
-    Run with an input directory (sample files provided in inputs/ directory in repo.), and be default,
+    Run with an input directory (sample files provided in inputs/ directory in repository), and be default,
     output files will be sent to current working directory (as no output directory specified with -o flag).
     
-    C:\Users\dessb\Desktop\jdx_dumper> python3 jdx_dump.py -d inputs/ 
+    > python3 jdx_dump.py -d inputs/ 
  
     Run with single file, and send outputs to a particular directory:
 
     Set the output directory to the current working directory, under a sub-folder 'outputs':
-    C:\Users\dessb\Desktop\jdx_dumper> set "DIR=%CD%"
-    C:\Users\dessb\Desktop\jdx_dumper> mkdir outputs
-    C:\Users\dessb\Desktop\jdx_dumper> python3 jdx_dump.py -f inputs/693-07-2-IR.jdx -o %DIR%\outputs
+    > set "DIR=%CD%"
+    > mkdir outputs
+    > python3 jdx_dump.py -f inputs/693-07-2-IR.jdx -o %DIR%\outputs
 
 ###### Sample Images
  
