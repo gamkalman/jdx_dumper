@@ -54,20 +54,20 @@
     C:\Users\dessb\Desktop\jdx_dumper> 
 
     Now you can run the code e.g.
-    > python3 jdx_dump.py --version
+    C:\Users\dessb\Desktop\jdx_dumper> python3 jdx_dump.py --version
     Version: 1.0.0    
  
     Run with an input directory (sample files provided in inputs/ directory in repo.), and be default,
     output files will be sent to current working directory (as no output directory specified with -o flag).
     
-    > python3 jdx_dump.py -d inputs/ 
+    C:\Users\dessb\Desktop\jdx_dumper> python3 jdx_dump.py -d inputs/ 
  
     Run with single file, and send outputs to a particular directory:
 
     Set the output directory to the current working directory, under a sub-folder 'outputs':
-    > set "DIR=%CD%"\outputs
-    > mkdir outputs
-    > python3 jdx_dump.py -f inputs/693-07-2-IR.jdx -o %DIR%
+    C:\Users\dessb\Desktop\jdx_dumper> set "DIR=%CD%"
+    C:\Users\dessb\Desktop\jdx_dumper> mkdir outputs
+    C:\Users\dessb\Desktop\jdx_dumper> python3 jdx_dump.py -f inputs/693-07-2-IR.jdx -o %DIR%\outputs
 
 ###### Sample Images
  
